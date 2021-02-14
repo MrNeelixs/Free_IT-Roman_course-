@@ -13,11 +13,15 @@ public class Solution {
         HelloWorld.showPrint();
         // Задание номер 3 из методички
         ConvertionTime.showTime();
+        // Задание 4 реверс числа.
+        ReversNumber.showRevers();
+        // Задание 5 Различие?
+        VariousNumbers.showVarious();
     }
 }
 
-class HelloWorld{
-    static void showPrint(){
+class HelloWorld {
+    static void showPrint() {
         System.out.println("Привет группа FreeIT !");
         System.out.print("Меня зовут Александр, ");
         System.out.println("буду рад взаимной помощи в домашних заданиях.");
@@ -49,8 +53,9 @@ class ConvertionTime {
         System.out.println(formattedDoubleSeconds + " секунд" + " это " + formattedDoubleMinutes + " минут" + " или " + hours + " часа" + " или " + formattedDoubleDay + " дня" + " или " + formattedDoubleWeek + " недели.");
     }
 }
-class ReversNumber{
-    static void showRevers(){
+
+class ReversNumber {
+    static void showRevers() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите 4-х значное число :");
         String inputNumber = sc.next();
@@ -58,6 +63,19 @@ class ReversNumber{
             System.out.println("Не 4-х значное число!\nПопробуй еще :");
             inputNumber = sc.next();
         }
-        System.out.printf("Введено => %s;%nРеверс => %s.",inputNumber, new StringBuilder(inputNumber).reverse().toString());
+        System.out.printf("Введено => %s;%nРеверс => %s.\n", inputNumber, new StringBuilder(inputNumber).reverse().toString());
+    }
+}
+
+class VariousNumbers {
+    static void showVarious() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите 4-х значное число :");
+        String inputNumber = sc.next();
+        while (inputNumber.length() != 4) {
+            System.out.println("Не 4-х значное число!\nПопробуй еще :");
+            inputNumber = sc.next();
+        }
+        System.out.println(inputNumber.chars().distinct().count() == 4 ? "В даном числе все цифры разные" : "В даном числе есть одинаковые цыфры.");
     }
 }
