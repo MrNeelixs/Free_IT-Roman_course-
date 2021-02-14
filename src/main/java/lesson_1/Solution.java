@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
                         Задание 1
 - Создать Git репозиторий.
@@ -8,14 +10,14 @@
 public class Solution {
     public static void main(String[] args) {
         // Реализация первого метода через ( System.out.println ).
-        HelloWorld.ShowPrint();
+        HelloWorld.showPrint();
         // Задание номер 3 из методички
         ConvertionTime.showTime();
     }
 }
 
 class HelloWorld{
-    static void ShowPrint(){
+    static void showPrint(){
         System.out.println("Привет группа FreeIT !");
         System.out.print("Меня зовут Александр, ");
         System.out.println("буду рад взаимной помощи в домашних заданиях.");
@@ -45,5 +47,17 @@ class ConvertionTime {
         System.out.println(formattedDoubleSeconds + " секунд" + " это " + formattedDoubleMinutes + " минут" + " или " + hours + " часа.");
         System.out.println(formattedDoubleSeconds + " секунд" + " это " + formattedDoubleMinutes + " минут" + " или " + hours + " часа" + " или " + formattedDoubleDay + " дня.");
         System.out.println(formattedDoubleSeconds + " секунд" + " это " + formattedDoubleMinutes + " минут" + " или " + hours + " часа" + " или " + formattedDoubleDay + " дня" + " или " + formattedDoubleWeek + " недели.");
+    }
+}
+class ReversNumber{
+    static void showRevers(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите 4-х значное число :");
+        String inputNumber = sc.next();
+        while (inputNumber.length() != 4) {
+            System.out.println("Не 4-х значное число!\nПопробуй еще :");
+            inputNumber = sc.next();
+        }
+        System.out.printf("Введено => %s;%nРеверс => %s.",inputNumber, new StringBuilder(inputNumber).reverse().toString());
     }
 }
