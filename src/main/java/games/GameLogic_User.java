@@ -106,7 +106,6 @@ public class GameLogic_User {
             return true;
         return false;
     }
-
     boolean isFieldFull() {
         /*
         Метод проверяет заняты ли все ячейки игрового поля.
